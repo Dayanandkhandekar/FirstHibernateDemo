@@ -5,8 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
-@Table(name = "student_info")
+@Table(name = "student_data")
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY, region="student")
 public class Student {
          
 	    @Id
@@ -18,6 +22,10 @@ public class Student {
 	    
 	    @Column(name = "mark")
 	    int mark;
+	    
+	    @Column(name = "student_address")
+	    String studentAddress; 
+	    
 
 		public int getStudentId() {
 			return studentId;
@@ -50,12 +58,41 @@ public class Student {
 			this.mark = mark;
 		}
 
-		@Override
-		public String toString() {
-			return "Student [studentId=" + studentId + ", studentName=" + studentName + ", mark=" + mark + "]";
-		}
+		
 	    
-	    public Student() {
+	    public String getStudentAddress() {
+			return studentAddress;
+		}
+
+		public void setStudentAddress(String studentAddress) {
+			this.studentAddress = studentAddress;
+		}
+		
+		
+
+		/**
+		 * @param studentId
+		 * @param studentName
+		 * @param mark
+		 * @param studentAddress
+		 */
+		public Student(int studentId, String studentName, int mark, String studentAddress) {
+			super();
+			this.studentId = studentId;
+			this.studentName = studentName;
+			this.mark = mark;
+			this.studentAddress = studentAddress;
+		}
+
+		public Student() {
 	    	
 	    }
+
+		@Override
+		public String toString() {
+			return "Student [studentId=" + studentId + ", studentName=" + studentName + ", mark=" + mark
+					+ ", studentAddress=" + studentAddress + "]";
+		}
+		
+		
 }
