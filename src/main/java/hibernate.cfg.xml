@@ -32,6 +32,13 @@
     <mapping class="com.inheritancedemo.A"/>
     <mapping class="com.inheritancedemo.B"/>
     <mapping class="com.inheritancedemo.C"/>
+    <mapping class="com.inheritancedemo.Emp"/>
+    <mapping class="com.inheritancedemo.PEMP11"/>
+     <mapping class="com.inheritancedemo.CEMP11"/>
+     <mapping class="com.inheritancedemo.Parent"/>
+     <mapping class="com.inheritancedemo.Child1"/>
+     <mapping class="com.inheritancedemo.Child2"/>
+      <mapping class="com.criteriademo.Employee"/>
    
     <!-- mapping class="com.mcnz.jpa.examples.Player" / -->
   </session-factory>
