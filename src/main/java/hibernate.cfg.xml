@@ -29,6 +29,7 @@
     <property name="format_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
     <mapping class="com.entity.Student"/>
+    <mapping class="com.entity.Employee"/>
     <mapping class="com.inheritancedemo.A"/>
     <mapping class="com.inheritancedemo.B"/>
     <mapping class="com.inheritancedemo.C"/>
