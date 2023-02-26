@@ -1,5 +1,6 @@
 package com.criteriademo;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,6 +15,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.PropertyProjection;
 import org.hibernate.criterion.Restrictions;
 
 public class CriteriaDemo {
@@ -45,11 +52,36 @@ public class CriteriaDemo {
 		       // List list = c.list();//select * from emp_data 
 		      //  System.out.println("list===="+list);
 		       
-		       c.add(Restrictions.ge("employeeSalaray", 200.0));//select * from emp_data where employeeSalaray > 1000;
+		      // c.add(Restrictions.ge("employeeSalaray", 200.0));//select * from emp_data where employeeSalaray > 1000;
 		         
+		      // c.add(Restrictions.ilike("empName", "A", MatchMode.START));//select * from emp_data where empName like 'A%';
+		      // Projection  empNameP = Projections.property("empName");
+		      // Projection  empIdP = Projections.property("empId");
+		       
+		      // ProjectionList pList=Projections.projectionList(); 
+		      // pList.add(empIdP);
+		      // pList.add(empNameP);
+		      // c.setProjection(Projections.property("empName"));
+		       
+		      // c.setProjection(Projections.property("empId"));
+		      // c.setProjection(pList);
+		       //c.setProjection(Projections.min("employeeSalaray"));
+		       
+		       c.addOrder(Order.desc("employeeSalaray"));//select * from emp_data order by emp_salary desc;
+		       
 		       List list= c.list();
 		       System.out.println("list===="+list);
-		     System.out.println("====EOP======");
+		       System.out.println("====EOP======");
+		       System.exit(0);
+		      
+		       
+		       Iterator it2 = list.iterator();
+
+		        while (it2.hasNext()) {
+		            Object[] obj = (Object[]) it2.next();
+		            System.out.println("empId : " + obj[0]+"  empName : "+obj[1]);
+		        }
+		   
 	}
 	
 }
