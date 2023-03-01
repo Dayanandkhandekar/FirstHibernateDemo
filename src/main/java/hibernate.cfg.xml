@@ -27,10 +27,10 @@
 
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
+    <property name="hbm2ddl.auto">create</property>
     <mapping class="com.entity.Student"/>
    <!--  <mapping class="com.entity.Employee"/> -->
-    <mapping class="com.inheritancedemo.A"/>
+   <!--  <mapping class="com.inheritancedemo.A"/>
     <mapping class="com.inheritancedemo.B"/>
     <mapping class="com.inheritancedemo.C"/>
     <mapping class="com.inheritancedemo.Emp"/>
@@ -39,7 +39,11 @@
      <mapping class="com.inheritancedemo.Parent"/>
      <mapping class="com.inheritancedemo.Child1"/>
      <mapping class="com.inheritancedemo.Child2"/>
-      <mapping class="com.criteriademo.Employee"/>
+      <mapping class="com.criteriademo.Employee"/> -->
+       <mapping class="com.mappingdemo.Person"/>
+       <mapping class="com.mappingdemo.AdharInfo"/>
+        <mapping class="com.mappingdemo.Customer"/>
+         <mapping class="com.mappingdemo.Bank"/>
    
     <!-- mapping class="com.mcnz.jpa.examples.Player" / -->
   </session-factory>
