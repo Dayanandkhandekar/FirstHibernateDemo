@@ -25,7 +25,7 @@ import org.hibernate.criterion.Restrictions;
 
 public class CriteriaDemo {
 	public static void main(String[] args) {
-		 System.out.println("===start111=== ");
+		 System.out.println("===start1111=== ");
 		  Configuration con=new Configuration();
 		 SessionFactory sf= con.configure("hibernate.cfg.xml").buildSessionFactory();
 		 
