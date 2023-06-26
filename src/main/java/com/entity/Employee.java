@@ -47,6 +47,7 @@ public class Employee {
 		super();
 		this.empId = empId;
 		this.empName = empName;
+		System.out.println("Inside Emp Constrcutor");
 	}
 	
 	public Employee () {
